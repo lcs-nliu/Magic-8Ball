@@ -11,8 +11,7 @@ import UIKit
 class ViewController: UIViewController {
 
     // Mark: Properties
-    // Generate random number between 1 and 20
-     let targetNumber = Int.random(in: 1...20)
+
     // Connected label to controller with an outlet
     @IBOutlet weak var generatedResponse: UILabel!
     
@@ -21,10 +20,13 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+    
     }
     // Created an action for when the button shake is clicked
-    // Created a switch statement for twenty different cases depending on the number being generated
-    @IBAction func shakeForResponse(_ sender: Any) {
+    @IBAction func shakeForResponse(_ sender: UIButton) {
+        // Generate random number between 1 and 20
+        let targetNumber = Int.random(in: 1...20)
+        // Created a switch statement for twenty different cases depending on the number being generated
         switch targetNumber {
         case 1:
             generatedResponse.text = "It is certain"
@@ -71,6 +73,4 @@ class ViewController: UIViewController {
         }
         
     }
-    
 }
-
